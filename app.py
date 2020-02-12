@@ -54,6 +54,9 @@ class myHandler(BaseHTTPRequestHandler):
 				sendReply = True
 			if self.path.endswith(".css"):
 				mimetype='text/css'
+				f=open(nombre)
+				datos=f.read()
+				f.close()
 				sendReply = True
 
 			if sendReply == True:
