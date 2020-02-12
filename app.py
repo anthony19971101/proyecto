@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# encoding: utf-8
 
 try:
 	from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
@@ -48,6 +49,9 @@ class myHandler(BaseHTTPRequestHandler):
 				sendReply = True
 			if self.path.endswith(".gif"):
 				mimetype='image/gif'
+				f=open(nombre)
+				datos=f.read()
+				f.close()
 				sendReply = True
 			if self.path.endswith(".js"):
 				mimetype='application/javascript'
